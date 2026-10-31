@@ -4,469 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="Barbearia Imperial: estilo, cuidado e personalidade. Conheça nossos serviços e agende seu horário.">
-  <title>Imperial Barbearia | Seu estilo, outro nível</title>
+
+  <meta name="description"
+    content="Barbearia Imperial: estilo, cuidado e personalidade.">
+
+  <title>Barbearia Imperial | Seu estilo, outro nível</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #101010;
-      --panel: #191919;
-      --gold: #d8ad61;
-      --white: #f6f3ee;
-      --muted: #aaa49b;
-      --line: #33302b;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: "DM Sans", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .gold {
-      color: var(--gold);
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    h1, h2, h3 {
-      font-family: "Oswald", sans-serif;
-      text-transform: uppercase;
-      line-height: 1.15;
-    }
-
-    h2 {
-      font-size: clamp(28px, 4vw, 38px);
-      margin: 10px 0 16px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 5px;
-      background: var(--gold);
-      color: #17130d;
-      font-weight: 700;
-      transition: transform .2s, background .2s;
-    }
-
-    .btn:hover {
-      background: #efc97e;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--white);
-    }
-
-    .btn-outline:hover {
-      color: #17130d;
-    }
-
-    /* MENU */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(16, 16, 16, .95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .logo {
-      font-family: "Oswald", sans-serif;
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    .logo small {
-      display: block;
-      color: var(--gold);
-      font-family: "DM Sans", sans-serif;
-      font-size: 9px;
-      letter-spacing: 5px;
-      text-align: center;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 13px;
-      color: #d4d0c9;
-      transition: color .2s;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    /* DESTAQUE */
-
-    .hero {
-      min-height: 570px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(10,10,10,.98) 0%,
-        rgba(10,10,10,.85) 42%,
-        rgba(10,10,10,.15) 100%),
-        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=85")
-        center 38% / cover no-repeat;
-      border-bottom: 1px solid #514027;
-    }
-
-    .hero-content {
-      max-width: 590px;
-      padding: 75px 0;
-      animation: appear .8s ease both;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 7vw, 76px);
-      margin: 18px 0;
-      letter-spacing: -.5px;
-    }
-
-    .hero p {
-      color: #d1ccc4;
-      max-width: 440px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* SERVIÇOS */
-
-    .section {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 32px;
-    }
-
-    .section-heading p {
-      max-width: 330px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service {
-      padding: 28px;
-      background: linear-gradient(145deg, #202020, #151515);
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      transition: transform .25s, border-color .25s;
-    }
-
-    .service:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold);
-    }
-
-    .service-icon {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-
-    .service h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .service p {
-      color: var(--muted);
-      font-size: 14px;
-      min-height: 46px;
-    }
-
-    .price {
-      display: block;
-      color: var(--gold);
-      margin-top: 20px;
-      font-weight: 700;
-    }
-
-    /* SOBRE */
-
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-      padding: 30px 0 85px;
-    }
-
-    .about img {
-      height: 420px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-    }
-
-    .about p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 25px 0;
-    }
-
-    .feature {
-      padding: 13px;
-      border-left: 2px solid var(--gold);
-      background: var(--panel);
-      font-size: 13px;
-    }
-
-    /* GALERIA */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .gallery img {
-      height: 260px;
-      border-radius: 6px;
-      transition: transform .3s, filter .3s;
-      filter: brightness(.85);
-    }
-
-    .gallery img:hover {
-      transform: scale(1.02);
-      filter: brightness(1);
-    }
-
-    /* CONTATO */
-
-    .contact {
-      padding: 65px 25px;
-      text-align: center;
-      background: linear-gradient(120deg, #211b12, #141414);
-      border: 1px solid #453722;
-      border-radius: 10px;
-      margin-bottom: 80px;
-    }
-
-    .contact p {
-      color: var(--muted);
-      margin: 12px auto 25px;
-      max-width: 500px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 32px 0;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    footer .logo {
-      color: var(--white);
-      margin-bottom: 15px;
-    }
-
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* CELULAR */
-
-    @media (max-width: 800px) {
-      .nav {
-        padding: 14px 0;
-        flex-wrap: wrap;
-      }
-
-      nav {
-        order: 3;
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-      }
-
-      .nav > .btn {
-        padding: 10px 12px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: 520px;
-        background-position: 58% center;
-      }
-
-      .hero-content {
-        padding: 65px 0;
-      }
-
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .about img {
-        height: 330px;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        width: 91%;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .hero {
-        background-position: 58% center;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-heading p {
-        margin-top: 12px;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .service p {
-        min-height: auto;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
-        gap: 9px;
-      }
-
-      .gallery img {
-        height: 180px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
+  <!-- CABEÇALHO -->
+
   <header>
     <div class="container nav">
+
       <a class="logo" href="#inicio">
         ♛ IMPERIAL
         <small>BARBEARIA</small>
@@ -477,18 +39,25 @@
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#galeria">Galeria</a>
-        <a href="#contato">Contato</a>
+        <a href="#agendamento">Agendar</a>
       </nav>
 
-      <a class="btn btn-outline"
-         href="#contato">Agende seu horário ↗</a>
+      <a class="btn btn-outline" href="#agendamento">
+        Agende seu horário ↗
+      </a>
+
     </div>
   </header>
 
   <main>
+
+    <!-- INÍCIO -->
+
     <section class="hero" id="inicio">
       <div class="container">
+
         <div class="hero-content">
+
           <span class="eyebrow">Barbearia Imperial</span>
 
           <h1>
@@ -503,24 +72,34 @@
           </p>
 
           <div class="hero-buttons">
-            <a class="btn" href="#contato">
-              Agende seu horário ↗
+            <a class="btn" href="#agendamento">
+              Agendar horário ↗
             </a>
+
             <a class="btn btn-outline" href="#servicos">
               Conheça os serviços
             </a>
           </div>
+
         </div>
       </div>
     </section>
 
+    <!-- SERVIÇOS -->
+
     <section class="section" id="servicos">
       <div class="container">
+
         <div class="section-heading">
           <div>
             <span class="eyebrow">O que fazemos</span>
-            <h2>Seu visual, <span class="gold">nossa missão.</span></h2>
+
+            <h2>
+              Seu visual,
+              <span class="gold">nossa missão.</span>
+            </h2>
           </div>
+
           <p>
             Do corte clássico ao estilo moderno,
             escolha o serviço que combina com você.
@@ -528,31 +107,54 @@
         </div>
 
         <div class="services">
+
           <article class="service">
             <div class="service-icon">✂</div>
             <h3>Corte masculino</h3>
-            <p>Cortes modernos e tradicionais com acabamento cuidadoso.</p>
+            <p>
+              Cortes modernos e tradicionais
+              com acabamento cuidadoso.
+            </p>
             <span class="price">A partir de R$ 40,00</span>
+            <a href="#agendamento" class="service-link">
+              Agendar serviço ↗
+            </a>
           </article>
 
           <article class="service">
             <div class="service-icon">♜</div>
             <h3>Barba</h3>
-            <p>Modelagem, contorno e acabamento para o seu estilo.</p>
+            <p>
+              Modelagem, contorno e acabamento
+              para o seu estilo.
+            </p>
             <span class="price">A partir de R$ 30,00</span>
+            <a href="#agendamento" class="service-link">
+              Agendar serviço ↗
+            </a>
           </article>
 
           <article class="service">
             <div class="service-icon">✦</div>
             <h3>Corte + barba</h3>
-            <p>Uma combinação completa para renovar o visual.</p>
+            <p>
+              Uma combinação completa para
+              renovar seu visual.
+            </p>
             <span class="price">A partir de R$ 60,00</span>
+            <a href="#agendamento" class="service-link">
+              Agendar serviço ↗
+            </a>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- SOBRE -->
+
     <section class="container about" id="sobre">
+
       <img
         src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85"
         alt="Interior de uma barbearia moderna"
@@ -560,11 +162,17 @@
 
       <div>
         <span class="eyebrow">Sobre a Imperial</span>
-        <h2>Tradição, atitude e <span class="gold">estilo.</span></h2>
+
+        <h2>
+          Tradição, atitude e
+          <span class="gold">estilo.</span>
+        </h2>
+
         <p>
-          Cada detalhe importa. Nossa proposta é oferecer
-          um ambiente agradável, atenção aos detalhes e
-          um atendimento pensado para cada cliente.
+          Cada detalhe importa. Nossa proposta é
+          oferecer um ambiente agradável, atenção
+          aos detalhes e um atendimento pensado
+          para cada cliente.
         </p>
 
         <div class="features">
@@ -574,88 +182,250 @@
           <div class="feature">✦ Cuidado com seu estilo</div>
         </div>
 
-        <a class="btn btn-outline" href="#contato">
-          Fale com a gente
+        <a class="btn btn-outline" href="#agendamento">
+          Reserve seu horário
         </a>
       </div>
+
     </section>
+
+    <!-- GALERIA -->
 
     <section class="section" id="galeria">
       <div class="container">
+
         <div class="section-heading">
           <div>
             <span class="eyebrow">Inspiração</span>
-            <h2>Estilo em cada <span class="gold">detalhe.</span></h2>
+
+            <h2>
+              Estilo em cada
+              <span class="gold">detalhe.</span>
+            </h2>
           </div>
-          <p>Uma seleção visual para apresentar a proposta da barbearia.</p>
+
+          <p>
+            Uma seleção visual para apresentar
+            a proposta da barbearia.
+          </p>
         </div>
 
         <div class="gallery">
+
           <img
             src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80"
-            alt="Referência de corte masculino" loading="lazy">
+            alt="Referência de corte masculino"
+            loading="lazy">
 
           <img
             src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=80"
-            alt="Referência de ambiente de barbearia" loading="lazy">
+            alt="Referência de ambiente de barbearia"
+            loading="lazy">
 
           <img
             src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=80"
-            alt="Referência de cuidados masculinos" loading="lazy">
+            alt="Referência de cuidados masculinos"
+            loading="lazy">
+
         </div>
       </div>
     </section>
 
+    <!-- AGENDAMENTO -->
+
+    <section class="section booking" id="agendamento">
+
+      <div class="container">
+
+        <div class="booking-heading">
+          <span class="eyebrow">Reserve seu momento</span>
+
+          <h2>
+            Seu próximo corte
+            <span class="gold">começa aqui.</span>
+          </h2>
+
+          <p>
+            Escolha seu serviço, profissional e horário.
+            Depois, solicite a confirmação pelo WhatsApp.
+          </p>
+        </div>
+
+        <div class="booking-card">
+
+          <div class="booking-top">
+            <span>✦ AGENDAMENTO</span>
+            <span>BARBEARIA IMPERIAL</span>
+          </div>
+
+          <form id="booking-form">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="booking-service">
+                  Escolha o serviço
+                </label>
+
+                <select id="booking-service" required>
+                  <option value="">Selecione o serviço</option>
+                  <option value="Corte masculino">
+                    Corte masculino — R$ 40,00
+                  </option>
+                  <option value="Barba">
+                    Barba — R$ 30,00
+                  </option>
+                  <option value="Corte + barba">
+                    Corte + barba — R$ 60,00
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="booking-barber">
+                  Escolha o profissional
+                </label>
+
+                <select id="booking-barber" required>
+                  <option value="">Selecione o profissional</option>
+                  <option value="Profissional 1">
+                    Profissional 1 (exemplo)
+                  </option>
+                  <option value="Profissional 2">
+                    Profissional 2 (exemplo)
+                  </option>
+                  <option value="Sem preferência">
+                    Sem preferência
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="booking-date">
+                  Escolha a data
+                </label>
+
+                <input
+                  type="date"
+                  id="booking-date"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="booking-time">
+                  Escolha o horário
+                </label>
+
+                <select id="booking-time" required>
+                  <option value="">Selecione o horário</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="customer-name">
+                  Seu nome
+                </label>
+
+                <input
+                  type="text"
+                  id="customer-name"
+                  placeholder="Digite seu nome"
+                  maxlength="80"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="customer-phone">
+                  Seu telefone
+                </label>
+
+                <input
+                  type="tel"
+                  id="customer-phone"
+                  placeholder="(69) 99999-9999"
+                  maxlength="20"
+                  required>
+              </div>
+
+            </div>
+
+            <div class="booking-footer">
+
+              <p>
+                Os horários são demonstrativos.
+                A reserva depende de confirmação.
+              </p>
+
+              <button
+                type="submit"
+                class="btn booking-button">
+                Solicitar agendamento ↗
+              </button>
+
+            </div>
+
+          </form>
+
+          <div
+            id="booking-result"
+            class="booking-result"
+            role="status"
+            aria-live="polite"
+            hidden>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+
     <section class="container contact" id="contato">
       <span class="eyebrow">Seu próximo visual começa aqui</span>
-      <h2>Vamos marcar seu <span class="gold">horário?</span></h2>
+
+      <h2>
+        Vamos renovar seu
+        <span class="gold">visual?</span>
+      </h2>
+
       <p>
-        Entre em contato para consultar disponibilidade
-        e conhecer melhor nossos serviços.
+        Escolha um serviço e solicite seu horário.
       </p>
 
-      <!-- Troque o número abaixo pelo WhatsApp autorizado do negócio.
-           Use DDI + DDD + número, somente dígitos. -->
-      <a class="btn" id="whatsapp" href="#">
-        Conversar pelo WhatsApp ↗
+      <a class="btn" href="#agendamento">
+        Agendar agora ↗
       </a>
     </section>
+
   </main>
+
+  <!-- RODAPÉ -->
 
   <footer>
     <div class="container">
+
       <div class="logo">
         ♛ IMPERIAL
         <small>BARBEARIA</small>
       </div>
+
       <p>Estilo, confiança e personalidade.</p>
       <p>Projeto demonstrativo de portfólio.</p>
-      <p>© <span id="year"></span> Barbearia Imperial.</p>
+
+      <p>
+        © <span id="year"></span> Barbearia Imperial.
+      </p>
+
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    // O contato real será configurado quando houver um cliente.
-    // Não deixe um número fictício como se fosse um contato real.
-    const numeroWhatsApp = "";
-
-    const botaoWhatsApp = document.getElementById("whatsapp");
-
-    if (numeroWhatsApp) {
-      botaoWhatsApp.href =
-        "https://wa.me/" + numeroWhatsApp.replace(/\D/g, "");
-      botaoWhatsApp.target = "_blank";
-      botaoWhatsApp.rel = "noopener noreferrer";
-    } else {
-      botaoWhatsApp.addEventListener("click", function(event) {
-        event.preventDefault();
-        alert("Este é um site demonstrativo. O WhatsApp será configurado para cada cliente.");
-      });
-    }
-  </script>
 
 </body>
 </html>
